@@ -12,5 +12,23 @@ def longest_palindrome(s)
   return 0
 end
 
-puts longest_palindrome("aaaaabbbbaaaa")
-puts longest_palindrome("eededdeedede")
+# puts longest_palindrome("aaaaabbbbaaaa")
+# puts longest_palindrome("eededdeedede")
+
+def rotations(s)
+  len = s.length
+# puts s
+# puts
+  0.upto(len-1).map do |offset|
+    (s.slice(offset, len - offset) + s.slice(0, offset))
+  end
+end
+
+# puts rotations("eededdeedede")
+
+gets
+test_string = gets.strip
+# puts test_string
+rotations(test_string).each do |rotation|
+  puts longest_palindrome(rotation)
+end
